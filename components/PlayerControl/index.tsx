@@ -156,11 +156,12 @@ function Index() {
       <Box style={{ width: "80%", display: "flex", flexDirection: "column" }}>
         <Box style={{ display: "flex", flexDirection: "column", margin: 0, marginRight: "1rem" }}>
           <Slider
+            component={"" as any}
             type="range"
-            value={trackProgress}
+            value={(trackProgress as number)}
             step={1}
             min={0}
-            max={duration ? duration : `${duration}`}
+            max={(duration as number) || 0}
             onChange={(e) => onScrub(parseInt((e.target as HTMLInputElement).value))}
             onMouseUp={onScrubEnd}
             onKeyUp={onScrubEnd}
@@ -194,14 +195,16 @@ function Index() {
             <Box style={{ display: "flex", width: "40vh", justifyContent: "left", alignItems: 'center' }} >
               <Collapse orientation="horizontal" in={isVolume}>
                 <Slider
-                  style={{ width: "30vh" }}
+                  component={"" as any}
                   type="range"
-                  value={volume * 100}
+                  style={{ width: "30vh" }}
+                  value={(volume as number) * 100}
                   step={0.01}
                   min={0}
                   max={100}
-                  onChange={(e) => onVolumeScrub(parseInt((e.target as HTMLInputElement).value) / 100)}
-                /></Collapse>
+                  onChange={(e) => { onVolumeScrub(parseInt((e.target as HTMLInputElement).value) / 100) }}
+                />
+              </Collapse>
             </Box>
           </Box>
           <Box>
