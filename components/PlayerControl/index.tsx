@@ -16,14 +16,14 @@ import { Button } from "@nextui-org/react";
 
 function Index() {
   // State
-  const [time, setTime] = useState('');
-  const [timeTrack, setTimeTrack] = useState('');
-  const [playBackSpeed, setPlayBackSpeed] = useState(0)
-  const [isVolume, setisVolume] = useState(true);
-  const [isVolumeMute, setisVolumeMute] = useState(true);
-  const [volume, setVolume] = useState(0.5);
-  const [trackProgress, setTrackProgress] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [time, setTime] = useState<string>('');
+  const [timeTrack, setTimeTrack] = useState<string>('');
+  const [playBackSpeed, setPlayBackSpeed] = useState<number>(0)
+  const [isVolume, setisVolume] = useState<boolean>(true);
+  const [isVolumeMute, setisVolumeMute] = useState<boolean>(true);
+  const [volume, setVolume] = useState<number>(0.5);
+  const [trackProgress, setTrackProgress] = useState<number>(0);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
   // Destructure for conciseness
   const audioSrc = "https://hanzluo.s3-us-west-1.amazonaws.com/music/wuyuwuqing.mp3";
